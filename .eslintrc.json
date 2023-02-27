@@ -1,0 +1,28 @@
+{
+  "extends": ["plugin:github/recommended"],
+  "plugins": ["jest"],
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "filenames/match-regex": "off",
+    "i18n-text/no-en": "off",
+    "sort-imports": ["error", { "ignoreCase": true, "ignoreDeclarationSort": true }],
+    "sort-keys-fix/sort-keys-fix": ["error", "asc", { "natural": true }],
+    "import/order": [
+      "error",
+      {
+        "groups": ["external", "builtin", "internal", "parent", "sibling", "index"],
+        "pathGroupsExcludedImportTypes": ["internal"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ]
+  },
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  }
+}
